@@ -13,8 +13,7 @@ M.base46 = {
   -- 	["@comment"] = { italic = true },
   -- },
 }
-
--- M.nvdash = { load_on_startup = true }
+M.nvdash = { load_on_startup = true }
 M.ui = {
   --  tabufline = {
   --     lazyload = false
@@ -31,8 +30,9 @@ M.mason = {
     "lua-language-server",
     "cssmodules-language-server",
     "tailwindcss-language-server",
+    "typescript-language-server",
     "css-variables-language-server",
+    "js-debug-adapter",
   },
 }
-
 return M

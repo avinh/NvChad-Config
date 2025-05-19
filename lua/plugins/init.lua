@@ -1,10 +1,9 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
-
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
@@ -16,8 +15,7 @@ return {
     "github/copilot.vim",
     lazy = false,
     config = function() -- Mapping tab is already used in NvChad
-      vim.g.copilot_no_tab_map = true -- Disable tab mapping
-      vim.g.copilot_assume_mapped = true -- Assume that the mapping is already done
+      require "configs.copilot"
     end,
   },
   -- test new blink
@@ -58,24 +56,5 @@ return {
         },
       }
     end,
-  },
-  -- formatting!
-  {
-    "stevearc/conform.nvim",
-    event = { "BufWritePre" },
-    opts = {
-      formatters_by_ft = {
-        lua = { "stylua" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        html = { "prettier" },
-        css = { "prettier" },
-        json = { "prettier" },
-      },
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
-    },
   },
 }
